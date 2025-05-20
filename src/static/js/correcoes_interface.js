@@ -1,4 +1,5 @@
-// Correções para problemas de interface mobile e PWA
+// Correções para problemas de interface mobile e PWA - Versão corrigida
+
 // 1. Correção para notificação de instalação PWA persistente
 function corrigirNotificacaoPWA() {
   // Verificar se o app já está instalado antes de mostrar a notificação
@@ -89,7 +90,7 @@ function corrigirCarrinhoMobile() {
   const carrinhoFlutuante = document.createElement('div');
   carrinhoFlutuante.className = 'carrinho-flutuante';
   carrinhoFlutuante.innerHTML = `
-    <a href="#" id="botao-carrinho-flutuante" class="btn-carrinho-flutuante">
+    <a href="#cart" id="botao-carrinho-flutuante" class="btn-carrinho-flutuante">
       <i class="bi bi-cart3"></i>
       <span class="badge bg-danger contador-carrinho">0</span>
     </a>
@@ -114,7 +115,7 @@ function corrigirCarrinhoMobile() {
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background-color: var(--primary-color);
+      background-color: var(--bs-success);
       color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       text-decoration: none;
@@ -149,24 +150,14 @@ function corrigirCarrinhoMobile() {
     });
   }
   
-  // Adicionar evento de clique para abrir o carrinho
-  const botaoCarrinhoFlutuante = document.getElementById('botao-carrinho-flutuante');
-  if (botaoCarrinhoFlutuante) {
-    botaoCarrinhoFlutuante.addEventListener('click', (e) => {
-      e.preventDefault();
-      // Abrir modal do carrinho ou navegar para página do carrinho
-      const carrinhoLink = document.querySelector('a[href="#carrinho"]');
-      if (carrinhoLink) {
-        carrinhoLink.click();
-      }
-    });
-  }
-  
   // Atualizar contador ao carregar a página
   window.addEventListener('load', atualizarContadorCarrinho);
   
   // Atualizar contador quando o carrinho for modificado
   window.addEventListener('carrinhoAtualizado', atualizarContadorCarrinho);
+  
+  // Verificar periodicamente o carrinho para atualizar o contador
+  setInterval(atualizarContadorCarrinho, 2000);
 }
 
 // 3. Correção para menu mobile que não fecha automaticamente
@@ -256,8 +247,13 @@ function corrigirImagensCarrinho() {
 
 // Inicializar todas as correções quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
-  corrigirNotificacaoPWA();
-  corrigirCarrinhoMobile();
-  corrigirMenuMobile();
-  corrigirImagensCarrinho();
+  // Aguardar um momento para garantir que o app.js já foi carregado
+  setTimeout(() => {
+    corrigirNotificacaoPWA();
+    corrigirCarrinhoMobile();
+    corrigirMenuMobile();
+    corrigirImagensCarrinho();
+    
+    console.log('Correções de interface aplicadas com sucesso!');
+  }, 500);
 });
