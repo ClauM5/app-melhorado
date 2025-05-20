@@ -1,0 +1,476 @@
+/* Estilos principais para o Hortifruti Delivery */
+
+:root {
+  --primary-color: #4CAF50;
+  --primary-dark: #388E3C;
+  --primary-light: #C8E6C9;
+  --accent-color: #FF9800;
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --divider-color: #BDBDBD;
+  --background-color: #f5f5f5;
+  --white: #ffffff;
+  --danger: #f44336;
+  --success: #4CAF50;
+  --warning: #FFC107;
+  --info: #2196F3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--background-color);
+  padding-top: 76px;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-brand img {
+  border-radius: 50%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--primary-color);
+}
+
+/* Main Content */
+.main-content {
+  min-height: calc(100vh - 76px - 200px);
+}
+
+.section {
+  padding: 80px 0;
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--primary-light);
+  padding: 80px 0;
+  margin-bottom: 40px;
+  border-radius: 0 0 20px 20px;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+}
+
+.hero p {
+  margin-bottom: 30px;
+}
+
+/* Cards */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: var(--text-secondary);
+}
+
+/* Product Cards */
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.product-original-price {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.product-unit {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.product-card .btn {
+  margin-top: auto;
+}
+
+/* Category Cards */
+.category-card {
+  position: relative;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.category-name {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Forms */
+.form-control {
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 1px solid var(--divider-color);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-success {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-success:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-outline-success {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Cart */
+.cart-count {
+  font-size: 0.7rem;
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--white);
+  border-top: 1px solid var(--divider-color);
+}
+
+/* Badges */
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.badge-pending {
+  background-color: var(--warning);
+  color: var(--text-primary);
+}
+
+.badge-processing {
+  background-color: var(--info);
+  color: var(--white);
+}
+
+.badge-shipped {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.badge-delivered {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+.badge-cancelled {
+  background-color: var(--danger);
+  color: var(--white);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  min-width: 250px;
+  z-index: 1100;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.toast-success {
+  border-left: 4px solid var(--success);
+}
+
+.toast-error {
+  border-left: 4px solid var(--danger);
+}
+
+.toast-warning {
+  border-left: 4px solid var(--warning);
+}
+
+.toast-info {
+  border-left: 4px solid var(--info);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 0;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .card-img-top {
+    height: 150px;
+  }
+  
+  .category-card {
+    height: 150px;
+  }
+  
+  .category-name {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 66px;
+  }
+  
+  .hero {
+    padding: 40px 0;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+  }
+}
+
+/* Admin Panel */
+.admin-sidebar {
+  background-color: var(--white);
+  border-right: 1px solid var(--divider-color);
+  height: 100%;
+  min-height: calc(100vh - 76px);
+}
+
+.admin-sidebar .nav-link {
+  color: var(--text-secondary);
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: all 0.3s;
+}
+
+.admin-sidebar .nav-link:hover,
+.admin-sidebar .nav-link.active {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.admin-sidebar .nav-link i {
+  margin-right: 10px;
+}
+
+.admin-content {
+  padding: 20px;
+}
+
+.admin-card {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.admin-card-header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--divider-color);
+  padding: 15px 20px;
+  font-weight: 500;
+}
+
+.admin-card-body {
+  padding: 20px;
+}
+
+.admin-table th {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.admin-pagination .page-link {
+  color: var(--primary-color);
+}
+
+.admin-pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Avatar */
+.avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  font-size: 2.5rem;
+}
+
+/* Offline page */
+.offline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.offline-icon {
+  font-size: 5rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.offline-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.offline-message {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* PWA Install Prompt */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  padding: 15px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.pwa-install-prompt.show {
+  transform: translateY(0);
+}
+
+.pwa-install-prompt-text {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.pwa-install-prompt-actions {
+  display: flex;
+  gap: 10px;
+}
