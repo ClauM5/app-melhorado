@@ -74,82 +74,1365 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Conteúdo principal aqui... -->
-        
-        <!-- PWA Install Prompt -->
         <div id="pwa-install-prompt" class="pwa-install-prompt" style="display: none;">
             <div class="pwa-install-prompt-content">
-                <h5 class="pwa-install-prompt-title">Instale nosso aplicativo</h5>
-                <p class="mb-0">Instale o Hortifruti Delivery para uma experiência melhor!</p>
-            </div>
-            <div class="pwa-install-prompt-actions">
-                <button id="close-install-prompt" class="btn btn-outline-secondary">Fechar</button>
-                <button id="install-button" class="btn btn-success">Instalar</button>
-            </div>
+        <h5 class="pwa-install-prompt-title">Instale nosso aplicativo</h5>
+        <p class="mb-0">Instale o Hortifruti Delivery para uma experiência melhor!</p>
         </div>
+        <div class="pwa-install-prompt-actions">
+        <button id="close-install-prompt" class="btn btn-outline-secondary">Fechar</button>
+        <button id="install-button" class="btn btn-success">Instalar</button>
+    </div>
+</div>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h1>Frutas e Verduras Frescas na sua Casa</h1>
+                            <p class="lead">Receba produtos frescos diretamente do produtor com entrega rápida e segura.</p>
+                            <a href="#products" class="btn btn-success btn-lg">Ver Produtos</a>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="/static/images/hero.jpg" alt="Hortifruti Delivery" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <h2 class="text-center mb-4">Produtos em Destaque</h2>
+                <div class="row" id="featured-products">
+                    <!-- Produtos em destaque serão carregados aqui -->
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="#products" class="btn btn-outline-success">Ver Todos os Produtos</a>
+                </div>
+                
+                <hr class="my-5">
+                
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <img src="/static/images/about.jpg" alt="Sobre Nós" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Sobre Nós</h2>
+                        <p>Somos uma empresa especializada na entrega de frutas, verduras e legumes frescos diretamente do produtor para sua casa.</p>
+                        <p>Nossa missão é proporcionar uma alimentação saudável e de qualidade para todos, com preços justos e entrega rápida.</p>
+                        <a href="#about" class="btn btn-outline-success">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="container">
+                <h2 class="text-center mb-4">Nossos Produtos</h2>
+                
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <select id="category-filter" class="form-select">
+                            <option value="">Todas as Categorias</option>
+                            <!-- Categorias serão carregadas aqui -->
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="text" id="search-product" class="form-control" placeholder="Buscar produtos...">
+                            <button class="btn btn-success" id="search-button">
+                                <i class="bi bi-search"></i> Buscar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row" id="products-container">
+                    <!-- Produtos serão carregados aqui -->
+                </div>
+                
+                <div id="no-products" style="display: none;" class="text-center my-5">
+                    <i class="bi bi-emoji-frown" style="font-size: 3rem;"></i>
+                    <h3 class="mt-3">Nenhum produto encontrado</h3>
+                    <p>Tente ajustar os filtros ou buscar por outro termo.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Categories Section -->
+        <section id="categories" class="section">
+            <div class="container">
+                <h2 class="text-center mb-4">Categorias</h2>
+                
+                <div class="row" id="categories-container">
+                    <!-- Categorias serão carregadas aqui -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="text-center mb-4">Sobre Nós</h2>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <img src="/static/images/about.jpg" alt="Sobre Nós" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Nossa História</h3>
+                        <p>Fundada em 2023, a Hortifruti Delivery nasceu da paixão por alimentos frescos e saudáveis. Nosso objetivo é conectar produtores locais diretamente aos consumidores, eliminando intermediários e garantindo produtos mais frescos a preços justos.</p>
+                        
+                        <h3 class="mt-4">Nossa Missão</h3>
+                        <p>Proporcionar uma alimentação saudável e de qualidade para todos, com preços justos e entrega rápida, valorizando os produtores locais e contribuindo para um mundo mais sustentável.</p>
+                        
+                        <h3 class="mt-4">Nossos Valores</h3>
+                        <ul>
+                            <li>Qualidade e frescor dos produtos</li>
+                            <li>Valorização dos produtores locais</li>
+                            <li>Sustentabilidade e respeito ao meio ambiente</li>
+                            <li>Transparência e honestidade</li>
+                            <li>Excelência no atendimento ao cliente</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-truck text-success" style="font-size: 3rem;"></i>
+                                <h4 class="mt-3">Entrega Rápida</h4>
+                                <p>Entregamos em até 24 horas após a confirmação do pedido, garantindo produtos frescos na sua casa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-shield-check text-success" style="font-size: 3rem;"></i>
+                                <h4 class="mt-3">Qualidade Garantida</h4>
+                                <p>Selecionamos cuidadosamente cada produto para garantir a melhor qualidade e frescor.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="bi bi-heart text-success" style="font-size: 3rem;"></i>
+                                <h4 class="mt-3">Produtores Locais</h4>
+                                <p>Trabalhamos com produtores locais, valorizando a agricultura familiar e produtos orgânicos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="text-center mb-4">Entre em Contato</h2>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h3 class="mb-4">Envie uma Mensagem</h3>
+                                <form id="contact-form">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Nome</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">Assunto</label>
+                                        <input type="text" class="form-control" id="subject" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Mensagem</label>
+                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Enviar Mensagem</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h3 class="mb-4">Informações de Contato</h3>
+                                <p><i class="bi bi-geo-alt text-success me-2"></i> Rua das Frutas, 123 - São Paulo/SP</p>
+                                <p><i class="bi bi-telephone text-success me-2"></i> (11) 99999-9999</p>
+                                <p><i class="bi bi-envelope text-success me-2"></i> contato@hortifrutidelivery.com.br</p>
+                                <p><i class="bi bi-clock text-success me-2"></i> Segunda a Sexta: 8h às 18h</p>
+                                <p><i class="bi bi-clock text-success me-2"></i> Sábado: 8h às 12h</p>
+                                
+                                <h4 class="mt-4 mb-3">Redes Sociais</h4>
+                                <div class="d-flex">
+                                    <a href="#" class="text-secondary me-3" style="font-size: 1.5rem;"><i class="bi bi-facebook"></i></a>
+                                    <a href="#" class="text-secondary me-3" style="font-size: 1.5rem;"><i class="bi bi-instagram"></i></a>
+                                    <a href="#" class="text-secondary me-3" style="font-size: 1.5rem;"><i class="bi bi-twitter"></i></a>
+                                    <a href="#" class="text-secondary" style="font-size: 1.5rem;"><i class="bi bi-whatsapp"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Login Section -->
+        <section id="login" class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h2 class="text-center mb-4">Login</h2>
+                                <form id="login-form">
+                                    <div class="mb-3">
+                                        <label for="login-email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="login-email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="login-password" class="form-label">Senha</label>
+                                        <input type="password" class="form-control" id="login-password" required>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-success">Entrar</button>
+                                    </div>
+                                </form>
+                                <div class="text-center mt-3">
+                                    <p>Não tem uma conta? <a href="#register" class="text-success">Cadastre-se</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Register Section -->
+        <section id="register" class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h2 class="text-center mb-4">Cadastro</h2>
+                                <form id="register-form">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="register-name" class="form-label">Nome Completo</label>
+                                            <input type="text" class="form-control" id="register-name" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="register-email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="register-email" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="register-password" class="form-label">Senha</label>
+                                            <input type="password" class="form-control" id="register-password" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="register-confirm-password" class="form-label">Confirmar Senha</label>
+                                            <input type="password" class="form-control" id="register-confirm-password" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="register-phone" class="form-label">Telefone</label>
+                                        <input type="tel" class="form-control" id="register-phone" required>
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="terms" required>
+                                        <label class="form-check-label" for="terms">Concordo com os <a href="#" class="text-success">Termos de Uso</a> e <a href="#" class="text-success">Política de Privacidade</a></label>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                                    </div>
+                                </form>
+                                <div class="text-center mt-3">
+                                    <p>Já tem uma conta? <a href="#login" class="text-success">Faça login</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <div class="container">
+                <h2 class="text-center mb-4">Minha Conta</h2>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="bg-light rounded-circle mx-auto d-flex align-items-center justify-content-center avatar-placeholder mb-3">
+                                    <i class="bi bi-person"></i>
+                                </div>
+                                <h4 id="profile-name">Nome do Usuário</h4>
+                                <p id="profile-email" class="text-muted">email@exemplo.com</p>
+                                <button class="btn btn-outline-danger btn-sm" id="logout-profile">Sair da Conta</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mb-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="mb-4">Atualizar Perfil</h3>
+                                <form id="profile-form">
+                                    <div class="mb-3">
+                                        <label for="profile-update-name" class="form-label">Nome</label>
+                                        <input type="text" class="form-control" id="profile-update-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="profile-update-email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="profile-update-email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="profile-update-phone" class="form-label">Telefone</label>
+                                        <input type="tel" class="form-control" id="profile-update-phone">
+                                    </div>
+                                    <hr>
+                                    <h4 class="mb-3">Alterar Senha</h4>
+                                    <div class="mb-3">
+                                        <label for="profile-current-password" class="form-label">Senha Atual</label>
+                                        <input type="password" class="form-control" id="profile-current-password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="profile-new-password" class="form-label">Nova Senha</label>
+                                        <input type="password" class="form-control" id="profile-new-password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="profile-confirm-password" class="form-label">Confirmar Nova Senha</label>
+                                        <input type="password" class="form-control" id="profile-confirm-password">
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Orders Section -->
+        <section id="orders" class="section">
+            <div class="container">
+                <h2 class="text-center mb-4">Meus Pedidos</h2>
+                
+                <div id="orders-empty" style="display: none;" class="text-center my-5">
+                    <i class="bi bi-bag" style="font-size: 3rem;"></i>
+                    <h3 class="mt-3">Você ainda não fez nenhum pedido</h3>
+                    <p>Explore nossos produtos e faça seu primeiro pedido!</p>
+                    <a href="#products" class="btn btn-success mt-3">Ver Produtos</a>
+                </div>
+                
+                <div id="orders-content">
+                    <div class="row" id="orders-list">
+                        <!-- Pedidos serão carregados aqui -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Order Detail Section -->
+        <section id="order-detail" class="section">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Detalhes do Pedido #<span id="order-detail-id"></span></h2>
+                    <a href="#orders" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Voltar
+                    </a>
+                </div>
+                
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <h5>Informações do Pedido</h5>
+                                <p><strong>Status:</strong> <span id="order-detail-status" class="badge"></span></p>
+                                <p><strong>Data:</strong> <span id="order-detail-date"></span></p>
+                                <p><strong>Forma de Pagamento:</strong> <span id="order-detail-payment"></span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Endereço de Entrega</h5>
+                                <p id="order-detail-address"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="mb-3">Itens do Pedido</h5>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Preço</th>
+                                        <th>Quantidade</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="order-detail-items">
+                                    <!-- Itens do pedido serão carregados aqui -->
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" class="text-end"><strong>Subtotal:</strong></td>
+                                        <td id="order-detail-subtotal"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-end"><strong>Frete:</strong></td>
+                                        <td id="order-detail-delivery"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                                        <td id="order-detail-total" class="fw-bold"></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="mb-3">Observações</h5>
+                        <p id="order-detail-notes"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Cart Section -->
+        <section id="cart" class="section">
+            <div class="container">
+                <h2 class="text-center mb-4">Carrinho de Compras</h2>
+                
+                <div id="cart-empty" class="text-center my-5">
+                    <i class="bi bi-cart" style="font-size: 3rem;"></i>
+                    <h3 class="mt-3">Seu carrinho está vazio</h3>
+                    <p>Adicione produtos ao carrinho para continuar.</p>
+                    <a href="#products" class="btn btn-success mt-3">Ver Produtos</a>
+                </div>
+                
+                <div id="cart-content" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-8 mb-4">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Produto</th>
+                                                    <th>Preço</th>
+                                                    <th>Quantidade</th>
+                                                    <th>Subtotal</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="cart-items">
+                                                <!-- Itens do carrinho serão carregados aqui -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-3">
+                                        <button id="clear-cart" class="btn btn-outline-danger">
+                                            <i class="bi bi-trash"></i> Limpar Carrinho
+                                        </button>
+                                        <a href="#products" class="btn btn-outline-success">
+                                            <i class="bi bi-plus"></i> Adicionar Mais Produtos
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="card border-0 shadow-sm mb-4">
+                                <div class="card-body">
+                                    <h5 class="mb-3">Resumo do Pedido</h5>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Subtotal</span>
+                                        <span id="cart-subtotal">R$ 0,00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Frete</span>
+                                        <span>R$ 5,99</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <strong>Total</strong>
+                                        <strong id="cart-total">R$ 0,00</strong>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button id="checkout-button" class="btn btn-success">Finalizar Pedido</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="mb-3">Cupom de Desconto</h5>
+                                    <div class="input-group mb-3">
+                                        <input type="text" id="coupon-code" class="form-control" placeholder="Código do cupom">
+                                        <button class="btn btn-outline-success" id="apply-coupon">Aplicar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Checkout Section -->
+        <section id="checkout" class="section">
+            <div class="container">
+                <h2 class="text-center mb-4">Finalizar Pedido</h2>
+                
+                <div class="row">
+                    <div class="col-lg-8 mb-4">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="mb-3">Endereço de Entrega</h5>
+                                <div class="row">
+                                    <div class="col-md-8 mb-3">
+                                        <label for="address" class="form-label">Endereço</label>
+                                        <input type="text" class="form-control" id="address" required>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="number" class="form-label">Número</label>
+                                        <input type="text" class="form-control" id="number" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="complement" class="form-label">Complemento</label>
+                                    <input type="text" class="form-control" id="complement">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="neighborhood" class="form-label">Bairro</label>
+                                        <input type="text" class="form-control" id="neighborhood" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="city" class="form-label">Cidade</label>
+                                        <input type="text" class="form-control" id="city" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="zipcode" class="form-label">CEP</label>
+                                    <input type="text" class="form-control" id="zipcode" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="mb-3">Forma de Pagamento</h5>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="payment" id="payment-credit" value="credit" checked>
+                                    <label class="form-check-label" for="payment-credit">
+                                        Cartão de Crédito
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="payment" id="payment-debit" value="debit">
+                                    <label class="form-check-label" for="payment-debit">
+                                        Cartão de Débito
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="payment" id="payment-pix" value="pix">
+                                    <label class="form-check-label" for="payment-pix">
+                                        PIX
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="payment" id="payment-money" value="money">
+                                    <label class="form-check-label" for="payment-money">
+                                        Dinheiro
+                                    </label>
+                                </div>
+                                <div id="money-change-container" style="display: none;">
+                                    <label for="money-change" class="form-label">Troco para</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">R$</span>
+                                        <input type="number" class="form-control" id="money-change" min="0" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="mb-3">Observações</h5>
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="order-notes" rows="3" placeholder="Instruções para entrega, referências, etc."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="mb-3">Resumo do Pedido</h5>
+                                <div id="checkout-items">
+                                    <!-- Itens do pedido serão carregados aqui -->
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Subtotal</span>
+                                    <span id="checkout-subtotal">R$ 0,00</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Frete</span>
+                                    <span>R$ 5,99</span>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <strong>Total</strong>
+                                    <strong id="checkout-total">R$ 0,00</strong>
+                                </div>
+                                <div class="d-grid">
+                                    <button id="place-order-button" class="btn btn-success">Confirmar Pedido</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Admin Section -->
+        <section id="admin" class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-lg-2 admin-sidebar p-0">
+                        <div class="p-3">
+                            <h4 class="mb-4">Painel Admin</h4>
+                            <div class="nav flex-column">
+                                <a href="#" class="nav-link admin-nav-link active" data-target="admin-dashboard-section">
+                                    <i class="bi bi-speedometer2"></i> Dashboard
+                                </a>
+                                <a href="#" class="nav-link admin-nav-link" data-target="admin-products-section">
+                                    <i class="bi bi-box"></i> Produtos
+                                </a>
+                                <a href="#" class="nav-link admin-nav-link" data-target="admin-categories-section">
+                                    <i class="bi bi-tags"></i> Categorias
+                                </a>
+                                <a href="#" class="nav-link admin-nav-link" data-target="admin-orders-section">
+                                    <i class="bi bi-bag"></i> Pedidos
+                                </a>
+                                <a href="#" class="nav-link admin-nav-link" data-target="admin-users-section">
+                                    <i class="bi bi-people"></i> Usuários
+                                </a>
+                                <a href="#" class="nav-link admin-nav-link" data-target="admin-settings-section">
+                                    <i class="bi bi-gear"></i> Configurações
+                                </a>
+                                <a href="#home" class="nav-link text-danger mt-4">
+                                    <i class="bi bi-box-arrow-left"></i> Sair do Admin
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-lg-10 admin-content">
+                        <!-- Admin Dashboard Section -->
+                        <div id="admin-dashboard-section" class="admin-section">
+                            <h2 class="mb-4">Dashboard</h2>
+                            
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3 mb-4">
+                                    <div class="card admin-card">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="text-muted">Total de Pedidos</h6>
+                                                    <h3 id="admin-total-orders">0</h3>
+                                                </div>
+                                                <div class="bg-light rounded-circle p-3">
+                                                    <i class="bi bi-bag text-success"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 mb-4">
+                                    <div class="card admin-card">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="text-muted">Total de Produtos</h6>
+                                                    <h3 id="admin-total-products">0</h3>
+                                                </div>
+                                                <div class="bg-light rounded-circle p-3">
+                                                    <i class="bi bi-box text-success"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 mb-4">
+                                    <div class="card admin-card">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="text-muted">Total de Usuários</h6>
+                                                    <h3 id="admin-total-users">0</h3>
+                                                </div>
+                                                <div class="bg-light rounded-circle p-3">
+                                                    <i class="bi bi-people text-success"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 mb-4">
+                                    <div class="card admin-card">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="text-muted">Receita Total</h6>
+                                                    <h3 id="admin-total-revenue">R$ 0,00</h3>
+                                                </div>
+                                                <div class="bg-light rounded-circle p-3">
+                                                    <i class="bi bi-currency-dollar text-success"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card admin-card">
+                                <div class="card-header admin-card-header">
+                                    <h5 class="mb-0">Pedidos Recentes</h5>
+                                </div>
+                                <div class="card-body admin-card-body">
+                                    <div class="table-responsive">
+                                        <table class="table admin-table" id="admin-recent-orders">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Cliente</th>
+                                                    <th>Total</th>
+                                                    <th>Status</th>
+                                                    <th>Data</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Pedidos recentes serão carregados aqui -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Admin Products Section -->
+                        <div id="admin-products-section" class="admin-section" style="display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h2>Produtos</h2>
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newProductModal">
+                                    <i class="bi bi-plus"></i> Novo Produto
+                                </button>
+                            </div>
+                            
+                            <div class="card admin-card">
+                                <div class="card-body admin-card-body">
+                                    <div class="table-responsive">
+                                        <table class="table admin-table" id="admin-products-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Produto</th>
+                                                    <th>Preço</th>
+                                                    <th>Estoque</th>
+                                                    <th>Categoria</th>
+                                                    <th>Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Produtos serão carregados aqui -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Admin Categories Section -->
+                        <div id="admin-categories-section" class="admin-section" style="display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h2>Categorias</h2>
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newCategoryModal">
+                                    <i class="bi bi-plus"></i> Nova Categoria
+                                </button>
+                            </div>
+                            
+                            <div class="card admin-card">
+                                <div class="card-body admin-card-body">
+                                    <div class="table-responsive">
+                                        <table class="table admin-table" id="admin-categories-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Categoria</th>
+                                                    <th>Descrição</th>
+                                                    <th>Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Categorias serão carregadas aqui -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Admin Orders Section -->
+                        <div id="admin-orders-section" class="admin-section" style="display: none;">
+                            <h2 class="mb-4">Pedidos</h2>
+                            
+                            <div class="card admin-card">
+                                <div class="card-body admin-card-body">
+                                    <div class="table-responsive">
+                                        <table class="table admin-table" id="admin-orders-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Cliente</th>
+                                                    <th>Total</th>
+                                                    <th>Status</th>
+                                                    <th>Data</th>
+                                                    <th>Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Pedidos serão carregados aqui -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Admin Users Section -->
+                        <div id="admin-users-section" class="admin-section" style="display: none;">
+                            <h2 class="mb-4">Usuários</h2>
+                            
+                            <div class="card admin-card">
+                                <div class="card-body admin-card-body">
+                                    <div class="table-responsive">
+                                        <table class="table admin-table" id="admin-users-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nome</th>
+                                                    <th>Email</th>
+                                                    <th>Tipo</th>
+                                                    <th>Data de Cadastro</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Usuários serão carregados aqui -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Admin Settings Section -->
+                        <div id="admin-settings-section" class="admin-section" style="display: none;">
+                            <h2 class="mb-4">Configurações</h2>
+                            
+                            <div class="card admin-card">
+                                <div class="card-header admin-card-header">
+                                    <h5 class="mb-0">Configurações da Loja</h5>
+                                </div>
+                                <div class="card-body admin-card-body">
+                                    <form id="store-settings-form">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="store-name" class="form-label">Nome da Loja</label>
+                                                <input type="text" class="form-control" id="store-name">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="store-email" class="form-label">Email de Contato</label>
+                                                <input type="email" class="form-control" id="store-email">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="store-phone" class="form-label">Telefone</label>
+                                                <input type="tel" class="form-control" id="store-phone">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="store-address" class="form-label">Endereço</label>
+                                                <input type="text" class="form-control" id="store-address">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="delivery-fee" class="form-label">Taxa de Entrega (R$)</label>
+                                                <input type="number" class="form-control" id="delivery-fee" min="0" step="0.01">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="min-order-value" class="form-label">Valor Mínimo do Pedido (R$)</label>
+                                                <input type="number" class="form-control" id="min-order-value" min="0" step="0.01">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="max-delivery-distance" class="form-label">Distância Máxima de Entrega (km)</label>
+                                                <input type="number" class="form-control" id="max-delivery-distance" min="0" step="0.1">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-success">Salvar Configurações</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Offline Section -->
+        <section id="offline" class="section">
+            <div class="offline-container">
+                <i class="bi bi-wifi-off offline-icon"></i>
+                <h2 class="offline-title">Você está offline</h2>
+                <p class="offline-message">Verifique sua conexão com a internet e tente novamente.</p>
+                <button class="btn btn-success" onclick="window.location.reload()">Tentar Novamente</button>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer bg-light mt-5 py-4">
+    <footer class="footer py-4 mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 mb-md-0">
                     <h5>Hortifruti Delivery</h5>
-                    <p>Frutas e verduras frescas na sua casa com apenas alguns cliques.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                    <p>Frutas e verduras frescas na sua casa.</p>
+                    <div class="d-flex">
+                        <a href="#" class="text-secondary me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Links Úteis</h5>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Produtos</a></li>
-                        <li><a href="#about">Sobre Nós</a></li>
-                        <li><a href="#contact">Contato</a></li>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-decoration-none text-secondary">Home</a></li>
+                        <li><a href="#products" class="text-decoration-none text-secondary">Produtos</a></li>
+                        <li><a href="#categories" class="text-decoration-none text-secondary">Categorias</a></li>
+                        <li><a href="#about" class="text-decoration-none text-secondary">Sobre</a></li>
+                        <li><a href="#contact" class="text-decoration-none text-secondary">Contato</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <h5>Contato</h5>
-                    <ul class="footer-links">
-                        <li><i class="bi bi-geo-alt me-2"></i> Rua das Frutas, 123 - São Paulo/SP</li>
-                        <li><i class="bi bi-telephone me-2"></i> (11) 99999-9999</li>
-                        <li><i class="bi bi-envelope me-2"></i> contato@hortifrutidelivery.com.br</li>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt text-success me-2"></i> Rua das Frutas, 123 - São Paulo/SP</li>
+                        <li><i class="bi bi-telephone text-success me-2"></i> (11) 99999-9999</li>
+                        <li><i class="bi bi-envelope text-success me-2"></i> contato@hortifrutidelivery.com.br</li>
                     </ul>
                 </div>
             </div>
             <hr>
             <div class="text-center">
-                <p class="mb-0">&copy; 2025 Hortifruti Delivery. Todos os direitos reservados.</p>
+                <p class="mb-0">&copy; 2023 Hortifruti Delivery. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <!-- Product Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalhes do Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <img id="modal-product-image" src="" alt="Produto" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 id="modal-product-name"></h3>
+                            <p class="text-muted" id="modal-product-category"></p>
+                            <h4 class="product-price" id="modal-product-price"></h4>
+                            <p id="modal-product-description"></p>
+                            <div class="d-flex align-items-center mb-3">
+                                <label for="modal-product-qty" class="me-3">Quantidade:</label>
+                                <div class="input-group" style="width: 130px;">
+                                    <button class="btn btn-outline-secondary" id="modal-decrease-qty">-</button>
+                                    <input type="number" class="form-control text-center" id="modal-product-qty" value="1" min="1">
+                                    <button class="btn btn-outline-secondary" id="modal-increase-qty">+</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-success w-100" id="modal-add-to-cart">
+                                <i class="bi bi-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderSuccessModalLabel">Pedido Realizado com Sucesso!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="bi bi-check-circle text-success" style="font-size: 4rem;"></i>
+                    <h4 class="mt-3">Seu pedido foi confirmado</h4>
+                    <p>Pedido #<span id="success-order-id"></span></p>
+                    <p>Você pode acompanhar o status do seu pedido na seção "Meus Pedidos".</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Modals -->
+    <!-- New Product Modal -->
+    <div class="modal fade" id="newProductModal" tabindex="-1" aria-labelledby="newProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newProductModalLabel">Novo Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="new-product-form">
+                        <div class="mb-3">
+                            <label for="new-product-name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="new-product-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-product-description" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="new-product-description" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="new-product-price" class="form-label">Preço</label>
+                                <input type="number" class="form-control" id="new-product-price" min="0" step="0.01" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="new-product-stock" class="form-label">Estoque</label>
+                                <input type="number" class="form-control" id="new-product-stock" min="0" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="new-product-unit" class="form-label">Unidade</label>
+                                <select class="form-select" id="new-product-unit" required>
+                                    <option value="un">Unidade</option>
+                                    <option value="kg">Kg</option>
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="l">l</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="new-product-category" class="form-label">Categoria</label>
+                                <select class="form-select" id="new-product-category" required>
+                                    <!-- Categorias serão carregadas aqui -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-product-image" class="form-label">URL da Imagem</label>
+                            <input type="text" class="form-control" id="new-product-image">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="new-product-featured">
+                            <label class="form-check-label" for="new-product-featured">Produto em Destaque</label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Criar Produto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProductModalLabel">Editar Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-product-form">
+                        <input type="hidden" id="edit-product-id">
+                        <div class="mb-3 text-center">
+                            <img id="edit-product-current-image" src="" alt="Produto" class="img-fluid rounded" style="max-height: 150px;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-product-name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="edit-product-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-product-description" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="edit-product-description" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="edit-product-price" class="form-label">Preço</label>
+                                <input type="number" class="form-control" id="edit-product-price" min="0" step="0.01" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="edit-product-stock" class="form-label">Estoque</label>
+                                <input type="number" class="form-control" id="edit-product-stock" min="0" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="edit-product-unit" class="form-label">Unidade</label>
+                                <select class="form-select" id="edit-product-unit" required>
+                                    <option value="un">Unidade</option>
+                                    <option value="kg">Kg</option>
+                                    <option value="g">g</option>
+                                    <option value="ml">ml</option>
+                                    <option value="l">l</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="edit-product-category" class="form-label">Categoria</label>
+                                <select class="form-select" id="edit-product-category" required>
+                                    <!-- Categorias serão carregadas aqui -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-product-image" class="form-label">URL da Imagem (deixe em branco para manter a atual)</label>
+                            <input type="text" class="form-control" id="edit-product-image">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="edit-product-featured">
+                            <label class="form-check-label" for="edit-product-featured">Produto em Destaque</label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Category Modal -->
+    <div class="modal fade" id="newCategoryModal" tabindex="-1" aria-labelledby="newCategoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newCategoryModalLabel">Nova Categoria</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="new-category-form">
+                        <div class="mb-3">
+                            <label for="new-category-name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="new-category-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-category-description" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="new-category-description" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-category-image" class="form-label">URL da Imagem</label>
+                            <input type="text" class="form-control" id="new-category-image">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Criar Categoria</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Category Modal -->
+    <div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editCategoryModalLabel">Editar Categoria</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-category-form">
+                        <input type="hidden" id="edit-category-id">
+                        <div class="mb-3 text-center">
+                            <img id="edit-category-current-image" src="" alt="Categoria" class="img-fluid rounded" style="max-height: 150px;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-category-name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="edit-category-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-category-description" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="edit-category-description" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-category-image" class="form-label">URL da Imagem (deixe em branco para manter a atual)</label>
+                            <input type="text" class="form-control" id="edit-category-image">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Order Modal -->
+    <div class="modal fade" id="viewOrderModal" tabindex="-1" aria-labelledby="viewOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewOrderModalLabel">Detalhes do Pedido #<span id="admin-order-id"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <h6>Informações do Pedido</h6>
+                            <p><strong>Cliente ID:</strong> <span id="admin-order-user-id"></span></p>
+                            <p><strong>Status:</strong> <span id="admin-order-status" class="badge"></span></p>
+                            <p><strong>Data:</strong> <span id="admin-order-date"></span></p>
+                            <p><strong>Forma de Pagamento:</strong> <span id="admin-order-payment"></span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Endereço de Entrega</h6>
+                            <p id="admin-order-address"></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <h6>Itens do Pedido</h6>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Preço</th>
+                                    <th>Quantidade</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-order-items">
+                                <!-- Itens do pedido serão carregados aqui -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-end"><strong>Subtotal:</strong></td>
+                                    <td id="admin-order-subtotal"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end"><strong>Frete:</strong></td>
+                                    <td id="admin-order-delivery"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                                    <td id="admin-order-total" class="fw-bold"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <hr>
+                    <h6>Observações</h6>
+                    <p id="admin-order-notes"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#updateStatusModal">Atualizar Status</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Status Modal -->
+    <div class="modal fade" id="updateStatusModal" tabindex="-1" aria-labelledby="updateStatusModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateStatusModalLabel">Atualizar Status do Pedido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="update-status-form">
+                        <input type="hidden" id="update-status-order-id">
+                        <div class="mb-3">
+                            <label for="update-status-current" class="form-label">Status Atual</label>
+                            <select class="form-select" id="update-status-current" disabled>
+                                <option value="pending">Pendente</option>
+                                <option value="processing">Em processamento</option>
+                                <option value="shipped">Enviado</option>
+                                <option value="delivered">Entregue</option>
+                                <option value="cancelled">Cancelado</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="update-status-new" class="form-label">Novo Status</label>
+                            <select class="form-select" id="update-status-new" required>
+                                <option value="pending">Pendente</option>
+                                <option value="processing">Em processamento</option>
+                                <option value="shipped">Enviado</option>
+                                <option value="delivered">Entregue</option>
+                                <option value="cancelled">Cancelado</option>
+                            </select>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Atualizar Status</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- App JS -->
-    <script src="/static/js/app.js"></script>
-    
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/static/js/service-worker.js')
-                    .then(registration => {
-                        console.log('Service Worker registrado com sucesso:', registration);
-                    })
-                    .catch(error => {
-                        console.log('Falha ao registrar Service Worker:', error);
-                    });
-            });
-        }
-    </script>
-    
-    <!-- Correções de Interface -->
     <script src="/static/js/correcoes_interface.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/cart.js"></script>
+    <script src="/static/js/admin.js"></script>
 </body>
 </html>
