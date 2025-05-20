@@ -1,14 +1,32 @@
-from flask import Flask, jsonify, request, send_from_directory
-from flask_cors import CORS
 import os
 import datetime
 import jwt
+from flask import Flask, jsonify, request, send_from_directory
+from flask_cors import CORS
+
+# Função para obter o caminho correto do banco de dados
+def get_database_path():
+    """Retorna o caminho correto para o banco de dados SQLite no Render"""
+    
+    # Verifica se estamos no ambiente Render
+    if os.environ.get('RENDER'):
+        # No Render, use a pasta tmp que tem permissão de escrita
+        db_path = "/tmp/hortifruti.db"
+        # Certifique-se de que o diretório existe
+        os.makedirs(os.path.dirname(db_path), exist_ok=True)
+    else:
+        # Localmente, use o caminho padrão
+        db_path = "instance/hortifruti.db"
+        # Certifique-se de que o diretório existe
+        os.makedirs("instance", exist_ok=True)
+    
+    return f"sqlite:///{db_path}"
 
 # Importar db do novo arquivo
 from src.models.db import db
 
 app = Flask(__name__, static_folder='static')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///hortifruti.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = get_database_path()
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'hortifruti-delivery-secret-key')
 
