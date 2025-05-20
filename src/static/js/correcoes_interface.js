@@ -1,5 +1,4 @@
 // Correções para problemas de interface mobile e PWA
-
 // 1. Correção para notificação de instalação PWA persistente
 function corrigirNotificacaoPWA() {
   // Verificar se o app já está instalado antes de mostrar a notificação
